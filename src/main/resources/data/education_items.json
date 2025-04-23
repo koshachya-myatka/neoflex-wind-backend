@@ -1,0 +1,72 @@
+[
+  {
+    "title": "NEOCHARITY",
+    "shortDescription": "Обучение детей Scratch и Python",
+    "fullDescription": "Образовательный проект \"NEOCHARITY\". Программа обучения включает такие направления, как программирование с помощью языков Scratch и Python, создание web-сайтов, графический дизайн.",
+    "correctCategory": "children",
+    "points": 2
+  },
+  {
+    "title": "Созвездие 24",
+    "shortDescription": "Встреча с талантливыми детьми",
+    "fullDescription": "Мероприятие \"Созвездие 24\". Встреча с талантливыми детьми из лагеря «Созвездие», на которой были подняты темы о мире фронтенд-разработки, а также проведена игра, посвященная Искусственному Интеллекту.",
+    "correctCategory": "children",
+    "points": 2
+  },
+  {
+    "title": "Разработка 3D-игр",
+    "shortDescription": "Курс по созданию трёхмерных игр",
+    "fullDescription": "Курс по созданию трёхмерных игр с использованием популярных движков и языков программирования.",
+    "correctCategory": "children",
+    "points": 2
+  },
+  {
+    "title": "Компьютерная графика",
+    "shortDescription": "Изучение компьютерной графики",
+    "fullDescription": "Направление в онлайн-школе по изучению компьютерной графики с помощью специализированного ПО.",
+    "correctCategory": "children",
+    "points": 2
+  },
+  {
+    "title": "Разработка Android-приложений",
+    "shortDescription": "Создание мобильных приложений",
+    "fullDescription": "Курс по созданию мобильных приложений для Android на Java/Kotlin с использованием Android Studio.",
+    "correctCategory": "children",
+    "points": 2
+  },
+  {
+    "title": "Neoskills lab",
+    "shortDescription": "Переквалификация ИТ-специалистов",
+    "fullDescription": "Проект по переквалификации ИТ-специалистов, желающих развиваться в новых для себя сферах.",
+    "correctCategory": "adults",
+    "points": 2
+  },
+  {
+    "title": "Java - разработка",
+    "shortDescription": "Курс по Java и Spring Framework",
+    "fullDescription": "Курс, включающий в себя основы языка, Spring Framework, работу с БД, тестирование, микросервисы, Docker и Camunda BPM.",
+    "correctCategory": "adults",
+    "points": 2
+  },
+  {
+    "title": "Мастеркласс \"Мозг vs Генеративный ИИ\"",
+    "shortDescription": "Доклад о мышлении и ИИ",
+    "fullDescription": "Доклад об отличиях процесса мышления человека и вычислительных подходов генеративных моделей.",
+    "correctCategory": "adults",
+    "points": 2
+  },
+  {
+    "title": "Frontend - разработка",
+    "shortDescription": "Курс по веб-разработке",
+    "fullDescription": "Курс про HTML/CSS, JavaScript/TypeScript, React, архитектуру, стилизацию, безопасность и основы бэкенда.",
+    "correctCategory": "adults",
+    "points": 2
+  },
+  {
+    "title": "Мастеркласс \"Создание геймифицированного квеста\"",
+    "shortDescription": "Доклад об игровых анимациях",
+    "fullDescription": "Доклад об интеграции анимаций в игровой процесс, методах создания интерактивных элементов.",
+    "correctCategory": "adults",
+    "points": 2
+  }
+]

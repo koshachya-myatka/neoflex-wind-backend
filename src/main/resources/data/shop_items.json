@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Блок стикеров-закладок",
+    "description": "Набор стикеров с фирменным дизайном",
+    "price": 50,
+    "stock": 100,
+    "imagePath": "assets/shop/stickers.png"
+  },
+  {
+    "name": "Ручка + Фиолетовый блокнот",
+    "description": "Фирменная ручка и блокнот",
+    "price": 100,
+    "stock": 50,
+    "imagePath": "assets/shop/notebook_purple.png"
+  },
+  {
+    "name": "Ручка + Блокнот с Неончиком",
+    "description": "Фирменная ручка и блокнот с маскотом",
+    "price": 150,
+    "stock": 30,
+    "imagePath": "assets/shop/notebook_mascot.png"
+  },
+  {
+    "name": "Мягкий антистресс",
+    "description": "Антистрессовая игрушка",
+    "price": 200,
+    "stock": 20,
+    "imagePath": "assets/shop/stress_toy.png"
+  },
+  {
+    "name": "Бутылка",
+    "description": "Фирменная бутылка для воды",
+    "price": 250,
+    "stock": 15,
+    "imagePath": "assets/shop/bottle.png"
+  },
+  {
+    "name": "Термокружка",
+    "description": "Термокружка с логотипом",
+    "price": 300,
+    "stock": 10,
+    "imagePath": "assets/shop/thermocup.png"
+  },
+  {
+    "name": "Рюкзак",
+    "description": "Стильный рюкзак",
+    "price": 500,
+    "stock": 5,
+    "imagePath": "assets/shop/backpack.png"
+  },
+  {
+    "name": "Powerbank",
+    "description": "Фирменный powerbank",
+    "price": 600,
+    "stock": 5,
+    "imagePath": "assets/shop/powerbank.png"
+  },
+  {
+    "name": "Беспроводная колонка",
+    "description": "Портативная колонка",
+    "price": 800,
+    "stock": 3,
+    "imagePath": "assets/shop/speaker.png"
+  },
+  {
+    "name": "Худи",
+    "description": "Фирменное худи",
+    "price": 1000,
+    "stock": 2,
+    "imagePath": "assets/shop/hoodie.png"
+  }
+]

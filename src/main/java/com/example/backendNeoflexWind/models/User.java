@@ -3,13 +3,12 @@ package com.example.backendNeoflexWind.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
 @ToString
+@Builder
 @Entity
 @Table(name = "users")
 public class User {
@@ -24,6 +23,4 @@ public class User {
     private String password;
     @Column(columnDefinition = "INTEGER DEFAULT 0")
     private Integer points = 0;
-    @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private LocalDateTime createdAt;
 }

@@ -1,0 +1,47 @@
+[
+  {
+    "era": "Рождение кода",
+    "questionText": "В каком году был основан Neoflex?",
+    "correctAnswer": "2005",
+    "option1": "2005",
+    "option2": "2004",
+    "option3": "2006",
+    "points": 3
+  },
+  {
+    "era": "Рождение кода",
+    "questionText": "Какой статус получила компания Neoflex на второй год после основания?",
+    "correctAnswer": "IBM Advanced Business Partner",
+    "option1": "Microsoft Gold Partner",
+    "option2": "IBM Advanced Business Partner",
+    "option3": "Oracle Platinum Partner",
+    "points": 3
+  },
+  {
+    "era": "Рождение кода",
+    "questionText": "В каком году был открыт филиал в Саратове?",
+    "correctAnswer": "2011",
+    "option1": "2010",
+    "option2": "2011",
+    "option3": "2012",
+    "points": 3
+  },
+  {
+    "era": "Рождение кода",
+    "questionText": "Neoflex DataGram – уникальный программный акселератор. На каких технологиях он был построен специалистами Neoflex?",
+    "correctAnswer": "Big Data",
+    "option1": "Blockchain",
+    "option2": "Quantum Computing",
+    "option3": "Big Data",
+    "points": 3
+  },
+  {
+    "era": "Рождение кода",
+    "questionText": "С какой организацией был выполнен проект по интеграции ИТ-систем ООО «банк Раунд» для реализации процессов выпуска и обслуживания банковских карт абонентов оператора связи в 2016 году?",
+    "correctAnswer": "ПАО «МегаФон»",
+    "option1": "ПАО «МТС»",
+    "option2": "ПАО «МегаФон»",
+    "option3": "ПАО «Билайн»",
+    "points": 3
+  }
+]
