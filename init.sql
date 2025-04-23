@@ -1,0 +1,12 @@
+CREATE DATABASE neoquestopia;
+
+\c neoquestopia;
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(50) UNIQUE NOT NULL,
+  email VARCHAR(100) UNIQUE,
+  password TEXT NOT NULL,
+  points INTEGER DEFAULT 0,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
