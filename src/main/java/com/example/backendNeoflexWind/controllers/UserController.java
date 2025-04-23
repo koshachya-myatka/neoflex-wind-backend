@@ -4,8 +4,10 @@ import com.example.backendNeoflexWind.dto.SimpleUserDto;
 import com.example.backendNeoflexWind.dto.UserDto;
 import com.example.backendNeoflexWind.models.User;
 import com.example.backendNeoflexWind.repositories.UserRepository;
+import com.example.backendNeoflexWind.services.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,29 +18,28 @@ import java.util.Optional;
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
 public class UserController {
-    private final UserRepository userRepository;
-    private final ObjectMapper objectMapper;
+    private final UserService userService;
 
     @GetMapping
     public List<User> getAllUsers() {
-        return userRepository.findAll();
+        return userService.findAllUsers();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
-        Optional<User> userOptional = userRepository.findById(id);
+        Optional<User> userOptional = userService.findUserById(id);
         return userOptional.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping("/register")
-    public User createUser(@RequestBody UserDto userDto) {
-        User user = objectMapper.convertValue(userDto, User.class);
-        return userRepository.save(user);
+    public ResponseEntity<User> createUser(@RequestBody UserDto userDto) {
+        Optional<User> userOptional = userService.addUser(userDto);
+        return userOptional.map(user -> ResponseEntity.status(201).body(user)).orElseGet(() -> ResponseEntity.status(400).build());
     }
 
     @PostMapping("/login")
     public ResponseEntity<User> authenticate(@RequestBody SimpleUserDto userDto) {
-        Optional<User> userOptional = userRepository.findByUsernameAndPassword(userDto.getUsername(), userDto.getPassword());
-        return userOptional.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        Optional<User> userOptional = userService.authenticate(userDto);
+        return userOptional.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
     }
 }
