@@ -13,9 +13,9 @@ import org.springframework.stereotype.Repository;
 public interface UserAnswerRepository extends JpaRepository<UserAnswer, Long> {
     @Modifying
     @Transactional
-    @Query("INSERT INTO user_answers (user_id, question_id, answer, is_сorrect) " +
+    @Query(value = "INSERT INTO user_answers (user_id, question_id, answer, is_сorrect) " +
             "VALUES (:userId, :questionId, :answer, :isCorrect) " +
-            "ON CONFLICT (user_id, question_id) DO UPDATE SET answer = :answer, is_сorrect = :isCorrect")
+            "ON CONFLICT (user_id, question_id) DO UPDATE SET answer = :answer, is_сorrect = :isCorrect", nativeQuery = true)
     void saveUserAnswer(@Param("userId") Long userId, @Param("questionId") Long questionId,
                         @Param("answer") String answer, @Param("isCorrect") Boolean isCorrect);
 }

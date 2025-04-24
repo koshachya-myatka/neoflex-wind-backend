@@ -6,8 +6,10 @@ import com.example.backendNeoflexWind.models.UserAnswer;
 import com.example.backendNeoflexWind.repositories.TestAttemptRepository;
 import com.example.backendNeoflexWind.repositories.TimeMachineQuestionRepository;
 import com.example.backendNeoflexWind.repositories.UserAnswerRepository;
+import com.example.backendNeoflexWind.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +20,7 @@ public class TimeMachineService {
     private final TestAttemptRepository testAttemptRepository;
     private final TimeMachineQuestionRepository timeMachineQuestionRepository;
     private final UserAnswerRepository userAnswerRepository;
+    private final UserRepository userRepository;
 
     public List<TestAttempt> findUsersTestAttempts(Long userId) {
         return testAttemptRepository.findByUserId(userId);
@@ -28,13 +31,26 @@ public class TimeMachineService {
     }
 
     @Transactional
-    public void incrementUsersTestAttempts(Long userId, String era) {
-        testAttemptRepository.incrementAttempt(userId, era);
+    public boolean incrementUsersTestAttempts(Long userId, String era) {
+        try {
+            testAttemptRepository.incrementAttempt(userId, era);
+        } catch (Exception e) {
+//            throw e;
+            return false;
+        }
+        return true;
     }
 
     @Transactional
-    public void submitAnswer(UserAnswer userAnswer) {
-        userAnswerRepository.saveUserAnswer(userAnswer.getUser().getId(), userAnswer.getQuestion().getId(), userAnswer.getAnswer(), userAnswer.getIsCorrect());
+    public boolean submitAnswer(Long userId, Long questionId, String answer, Boolean isCorrect) {
+        try {
+            userAnswerRepository.saveUserAnswer(userId, questionId, answer, isCorrect);
+        } catch (Exception e) {
+//            throw e;
+            return false;
+        }
+        return true;
     }
+
 
 }
