@@ -21,7 +21,7 @@ public class EducationAttempt {
     private User user;
     @Column(name = "attempts_used", columnDefinition = "INTEGER DEFAULT 0")
     private Integer attemptsUsed = 0;
-    @Column(name = "last_attempt")
+    @Column(name = "last_attempt", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime lastAttempt;
     @Column(name = "max_attempts", columnDefinition = "INTEGER DEFAULT 3")
     private Integer maxAttempts = 3;

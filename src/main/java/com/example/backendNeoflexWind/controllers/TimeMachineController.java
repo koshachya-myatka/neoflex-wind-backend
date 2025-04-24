@@ -1,7 +1,7 @@
 package com.example.backendNeoflexWind.controllers;
 
 import com.example.backendNeoflexWind.dto.TestAttemptDto;
-import com.example.backendNeoflexWind.dto.UserAnswerDto;
+import com.example.backendNeoflexWind.dto.UserTestAnswerDto;
 import com.example.backendNeoflexWind.models.TestAttempt;
 import com.example.backendNeoflexWind.models.TimeMachineQuestion;
 import com.example.backendNeoflexWind.services.TimeMachineService;
@@ -36,8 +36,8 @@ public class TimeMachineController {
     }
 
     @PostMapping("/user_answers/")
-    public ResponseEntity<Void> submitUsersAnswer(@RequestBody UserAnswerDto userAnswerDto) {
-        if (!timeMachineService.submitAnswer(userAnswerDto.getUserId(), userAnswerDto.getQuestionId(), userAnswerDto.getAnswer(), userAnswerDto.getIsCorrect())) {
+    public ResponseEntity<Void> submitUserAnswer(@RequestBody UserTestAnswerDto userTestAnswerDto) {
+        if (!timeMachineService.submitAnswer(userTestAnswerDto.getUserId(), userTestAnswerDto.getQuestionId(), userTestAnswerDto.getAnswer(), userTestAnswerDto.getIsCorrect())) {
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok().build();

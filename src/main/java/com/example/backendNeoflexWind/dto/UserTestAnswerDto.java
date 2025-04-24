@@ -8,7 +8,7 @@ import lombok.*;
 @Setter
 @Getter
 @ToString
-public class UserAnswerDto {
+public class UserTestAnswerDto {
     @JsonProperty("userId")
     private Long userId;
     @JsonProperty("questionId")

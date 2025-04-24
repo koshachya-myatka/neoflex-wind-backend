@@ -1,12 +1,12 @@
 package com.example.backendNeoflexWind.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
+@ToString
 public class EducationAnswerDto {
     private Long userId;
     private Long itemId;
