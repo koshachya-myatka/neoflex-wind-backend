@@ -18,10 +18,10 @@ public class Achievement {
     private String name;
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
-    @Column(nullable = false)
+    @Column(name = "points_reward", nullable = false)
     private Integer pointsReward;
-    @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
+    @Column(name = "is_secret", columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean isSecret = false;
-    @Column(length = 100)
+    @Column(name = "icon_path", length = 100)
     private String iconPath;
 }

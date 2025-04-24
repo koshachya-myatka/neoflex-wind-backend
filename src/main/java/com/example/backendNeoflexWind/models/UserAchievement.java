@@ -22,6 +22,6 @@ public class UserAchievement {
     @ManyToOne
     @JoinColumn(name = "achievement_id", nullable = false)
     private Achievement achievement;
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "earned_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime earnedAt;
 }

@@ -1,0 +1,30 @@
+package com.example.backendNeoflexWind.controllers;
+
+import com.example.backendNeoflexWind.models.TestAttempt;
+import com.example.backendNeoflexWind.models.TimeMachineQuestion;
+import com.example.backendNeoflexWind.services.TimeMachineService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/time_machine")
+@RequiredArgsConstructor
+public class TimeMachineController {
+    private final TimeMachineService timeMachineService;
+
+    @GetMapping("/test_attempts/{userId}")
+    public List<TestAttempt> findUsersTestAttempts(@PathVariable Long userId) {
+        return timeMachineService.findUsersTestAttempts(userId);
+    }
+
+    @GetMapping("/questions/{era}")
+    public List<TimeMachineQuestion> findTimeMachineQuestionsByEra(@PathVariable String era) {
+        return timeMachineService.findTimeMachineQuestionsByEra(era);
+    }
+
+}

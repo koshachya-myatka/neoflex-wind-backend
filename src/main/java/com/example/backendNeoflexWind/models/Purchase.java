@@ -20,7 +20,7 @@ public class Purchase {
     private Long userId;
     @Column(name = "item_id")
     private Long itemId;
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "purchased_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Timestamp purchasedAt;
     @Column(length = 20)
     private String status = "pending";

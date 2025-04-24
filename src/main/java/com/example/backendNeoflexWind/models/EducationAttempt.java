@@ -19,9 +19,10 @@ public class EducationAttempt {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
-    @Column(columnDefinition = "INTEGER DEFAULT 0")
+    @Column(name = "attempts_used", columnDefinition = "INTEGER DEFAULT 0")
     private Integer attemptsUsed = 0;
+    @Column(name = "last_attempt")
     private LocalDateTime lastAttempt;
-    @Column(columnDefinition = "INTEGER DEFAULT 3")
+    @Column(name = "max_attempts", columnDefinition = "INTEGER DEFAULT 3")
     private Integer maxAttempts = 3;
 }

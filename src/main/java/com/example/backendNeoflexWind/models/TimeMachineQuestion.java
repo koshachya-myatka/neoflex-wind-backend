@@ -16,9 +16,9 @@ public class TimeMachineQuestion {
     private Long id;
     @Column(nullable = false, length = 50)
     private String era;
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(name = "question_text", nullable = false, columnDefinition = "TEXT")
     private String questionText;
-    @Column(nullable = false, length = 255)
+    @Column(name = "correct_answer", nullable = false, length = 255)
     private String correctAnswer;
     @Column(length = 255)
     private String option1;

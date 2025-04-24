@@ -21,7 +21,8 @@ public class TestAttempt {
     private User user;
     @Column(nullable = false, length = 50)
     private String era;
-    @Column(columnDefinition = "INTEGER DEFAULT 0")
+    @Column(name = "attempts_used", columnDefinition = "INTEGER DEFAULT 0")
     private Integer attemptsUsed = 0;
+    @Column(name = "last_attempt")
     private LocalDateTime lastAttempt;
 }

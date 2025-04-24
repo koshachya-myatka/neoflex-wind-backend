@@ -24,9 +24,9 @@ public class UserAnswer {
     private TimeMachineQuestion question;
     @Column(nullable = false, length = 255)
     private String answer;
-    @Column(nullable = false)
+    @Column(name = "is_correct", nullable = false)
     private Boolean isCorrect;
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "answered_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime answeredAt;
 }
 

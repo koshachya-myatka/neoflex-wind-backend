@@ -22,10 +22,10 @@ public class EducationAnswer {
     @ManyToOne
     @JoinColumn(name = "item_id", nullable = false)
     private EducationItem item;
-    @Column(nullable = false, length = 20)
+    @Column(name = "selected_category", nullable = false, length = 20)
     private String selectedCategory;
-    @Column(nullable = false)
+    @Column(name = "is_correct", nullable = false)
     private Boolean isCorrect;
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "answered_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime answeredAt;
 }

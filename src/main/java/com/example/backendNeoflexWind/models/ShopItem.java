@@ -21,6 +21,6 @@ public class ShopItem {
     @Column(nullable = false)
     private Integer price;
     private Integer stock;
-    @Column(length = 100)
+    @Column(name = "image_path", length = 100)
     private String imagePath;
 }

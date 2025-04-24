@@ -16,11 +16,11 @@ public class EducationItem {
     private Long id;
     @Column(nullable = false, length = 100)
     private String title;
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(name = "short_description", nullable = false, columnDefinition = "TEXT")
     private String shortDescription;
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(name = "full_description", nullable = false, columnDefinition = "TEXT")
     private String fullDescription;
-    @Column(nullable = false, length = 20)
+    @Column(name = "correct_category", nullable = false, length = 20)
     private String correctCategory;
     @Column(nullable = false)
     private Integer points;
