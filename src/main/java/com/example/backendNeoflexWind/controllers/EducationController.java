@@ -1,8 +1,10 @@
 package com.example.backendNeoflexWind.controllers;
 
+import com.example.backendNeoflexWind.dto.AnswerBatchRequest;
 import com.example.backendNeoflexWind.models.EducationItem;
 import com.example.backendNeoflexWind.services.EducationService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,19 +29,20 @@ public class EducationController {
         List<EducationItem> items = educationService.getAllEducationItems();
         return ResponseEntity.ok(items);
     }
-
+    //todo
     @PostMapping("/attempts/increment/")
     public ResponseEntity<Void> incrementAttempts(@RequestBody Map<String, Long> request) {
         educationService.incrementAttempts(request.get("userId"));
         return ResponseEntity.ok().build();
     }
-//    @PostMapping("/answers/")
-//    public ResponseEntity<Void> saveAnswers(
-//            @RequestBody AnswerBatchRequest request) {
-//
-//        educationService.saveAnswers(request.getAnswers());
-//        educationService.addPoints(request.getUserId(), request.getPointsEarned());
-//
-//        return ResponseEntity.status(HttpStatus.CREATED).build();
-//    }
+    //todo
+    @PostMapping("/answers/")
+    public ResponseEntity<Void> saveAnswers(
+            @RequestBody AnswerBatchRequest request) {
+
+        educationService.saveAnswers(request.getAnswers());
+        educationService.addPoints(request.getUserId(), request.getPointsEarned());
+
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
 }

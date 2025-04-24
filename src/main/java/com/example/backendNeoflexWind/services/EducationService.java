@@ -34,6 +34,7 @@ public class EducationService {
     public List<EducationItem> getAllEducationItems() {
         return educationItemRepository.findAll();
     }
+    //todo
     @Transactional
     public void incrementAttempts(Long userId) {
         // Находим пользователя или выбрасываем исключение
@@ -59,28 +60,30 @@ public class EducationService {
                         }
                 );
     }
-//    @Transactional
-//    public void saveAnswers(List<EducationAnswerDto> answers) {
-//        answers.forEach(dto -> {
-//            EducationAnswer answer = answerRepository
-//                    .findByUserIdAndItemId(dto.getUserId(), dto.getItemId())
-//                    .orElseGet(EducationAnswer::new);
-//
-//            answer.setUser(userRepository.findById(dto.getUserId())
-//                    .orElseThrow(() -> new EntityNotFoundException("User not found")));
-//            answer.setItem(educationItemRepository.findById(dto.getItemId())
-//                    .orElseThrow(() -> new EntityNotFoundException("Item not found")));
-//            answer.setSelectedCategory(dto.getSelectedCategory());
-//            answer.setIsCorrect(dto.getIsCorrect());
-//            answer.setAnsweredAt(LocalDateTime.now());
-//
-//            answerRepository.save(answer);
-//        });
-//    }
-//    @Transactional
-//    public void addPoints(Long userId, Integer points) {
-//        User user = userRepository.findById(userId)
-//                .orElseThrow(() -> new EntityNotFoundException("User not found"));
-//        user.setPoints(user.getPoints() + points);
-//    }
+    //todo
+    @Transactional
+    public void saveAnswers(List<EducationAnswerDto> answers) {
+        answers.forEach(dto -> {
+            EducationAnswer answer = answerRepository
+                    .findByUserIdAndItemId(dto.getUserId(), dto.getItemId())
+                    .orElseGet(EducationAnswer::new);
+
+            answer.setUser(userRepository.findById(dto.getUserId())
+                    .orElseThrow(() -> new EntityNotFoundException("User not found")));
+            answer.setItem(educationItemRepository.findById(dto.getItemId())
+                    .orElseThrow(() -> new EntityNotFoundException("Item not found")));
+            answer.setSelectedCategory(dto.getSelectedCategory());
+            answer.setIsCorrect(dto.getIsCorrect());
+            answer.setAnsweredAt(LocalDateTime.now());
+
+            answerRepository.save(answer);
+        });
+    }
+    //todo
+    @Transactional
+    public void addPoints(Long userId, Integer points) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+        user.setPoints(user.getPoints() + points);
+    }
 }
