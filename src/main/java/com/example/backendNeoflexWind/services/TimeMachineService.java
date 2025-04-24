@@ -2,14 +2,12 @@ package com.example.backendNeoflexWind.services;
 
 import com.example.backendNeoflexWind.models.TestAttempt;
 import com.example.backendNeoflexWind.models.TimeMachineQuestion;
-import com.example.backendNeoflexWind.models.UserAnswer;
 import com.example.backendNeoflexWind.repositories.TestAttemptRepository;
 import com.example.backendNeoflexWind.repositories.TimeMachineQuestionRepository;
 import com.example.backendNeoflexWind.repositories.UserAnswerRepository;
 import com.example.backendNeoflexWind.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,7 +31,8 @@ public class TimeMachineService {
     @Transactional
     public boolean incrementUsersTestAttempts(Long userId, String era) {
         try {
-            testAttemptRepository.incrementAttempt(userId, era);
+            int currentAttemptsUsed = testAttemptRepository.countByUserIdAndEra(userId, era);
+            testAttemptRepository.incrementAttempt(userId, era, currentAttemptsUsed+1);
         } catch (Exception e) {
 //            throw e;
             return false;
@@ -51,6 +50,4 @@ public class TimeMachineService {
         }
         return true;
     }
-
-
 }

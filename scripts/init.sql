@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS test_attempts (
     user_id INTEGER REFERENCES users(id),
     era VARCHAR(50) NOT NULL,  -- 'Рождение кода', 'Эпоха прорыва', 'Цифровая революция'
     attempts_used INTEGER DEFAULT 0,
-    last_attempt TIMESTAMP
+    last_attempt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Таблица для хранения попыток прохождения образовательных миссий

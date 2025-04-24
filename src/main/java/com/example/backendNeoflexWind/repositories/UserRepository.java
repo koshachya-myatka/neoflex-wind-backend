@@ -20,6 +20,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE users u SET u.points = u.points + :points WHERE u.id = :userId", nativeQuery = true)
+    @Query(value = "UPDATE users SET points = points + :points WHERE id = :userId", nativeQuery = true)
     void updateUserPoints(@Param("userId") Long userId, @Param("points") Integer points);
 }

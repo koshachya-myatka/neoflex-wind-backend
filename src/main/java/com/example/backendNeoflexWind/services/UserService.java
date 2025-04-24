@@ -2,6 +2,7 @@ package com.example.backendNeoflexWind.services;
 
 import com.example.backendNeoflexWind.dto.SimpleUserDto;
 import com.example.backendNeoflexWind.dto.UserDto;
+import com.example.backendNeoflexWind.dto.UserPointsDto;
 import com.example.backendNeoflexWind.models.User;
 import com.example.backendNeoflexWind.repositories.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -46,5 +47,15 @@ public class UserService {
 
     public Optional<User> authenticate(SimpleUserDto userDto) {
         return userRepository.findByUsernameAndPassword(userDto.getUsername(), userDto.getPassword());
+    }
+
+    public boolean updateUserPoints(UserPointsDto userPointsDto){
+        try {
+            userRepository.updateUserPoints(userPointsDto.getUserId(), userPointsDto.getPoints());
+        } catch (Exception e) {
+            throw e;
+//            return false;
+        }
+        return true;
     }
 }

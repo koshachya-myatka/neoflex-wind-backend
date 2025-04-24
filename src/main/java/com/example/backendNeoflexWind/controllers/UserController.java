@@ -2,6 +2,7 @@ package com.example.backendNeoflexWind.controllers;
 
 import com.example.backendNeoflexWind.dto.SimpleUserDto;
 import com.example.backendNeoflexWind.dto.UserDto;
+import com.example.backendNeoflexWind.dto.UserPointsDto;
 import com.example.backendNeoflexWind.models.User;
 import com.example.backendNeoflexWind.repositories.UserRepository;
 import com.example.backendNeoflexWind.services.UserService;
@@ -42,5 +43,13 @@ public class UserController {
     public ResponseEntity<User> authenticate(@RequestBody SimpleUserDto userDto) {
         Optional<User> userOptional = userService.authenticate(userDto);
         return userOptional.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+    }
+
+    @PostMapping("/updatePoints")
+    public ResponseEntity<Void> updateUsersPoints(@RequestBody UserPointsDto userPointsDto) {
+        if (userService.updateUserPoints(userPointsDto)) {
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.badRequest().build();
     }
 }

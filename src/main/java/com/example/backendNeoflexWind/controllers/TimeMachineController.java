@@ -27,7 +27,7 @@ public class TimeMachineController {
         return timeMachineService.findTimeMachineQuestionsByEra(era);
     }
 
-    @PostMapping("/test_attempts/increment")
+    @PostMapping("/test_attempts/increment/")
     public ResponseEntity<Void> incrementUsersTestAttempts(@RequestBody TestAttemptDto testAttemptDto) {
         if (!timeMachineService.incrementUsersTestAttempts(testAttemptDto.getUserId(), testAttemptDto.getEra())) {
             return ResponseEntity.badRequest().build();
@@ -35,12 +35,11 @@ public class TimeMachineController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/user_answers")
+    @PostMapping("/user_answers/")
     public ResponseEntity<Void> submitUsersAnswer(@RequestBody UserAnswerDto userAnswerDto) {
         if (!timeMachineService.submitAnswer(userAnswerDto.getUserId(), userAnswerDto.getQuestionId(), userAnswerDto.getAnswer(), userAnswerDto.getIsCorrect())) {
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok().build();
     }
-
 }

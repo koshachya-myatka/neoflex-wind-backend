@@ -15,10 +15,11 @@ import java.util.List;
 public interface TestAttemptRepository extends JpaRepository<TestAttempt, Long> {
     List<TestAttempt> findByUserId(Long userId);
 
+    int countByUserIdAndEra(Long userId, String era);
+
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO test_attempts (user_id, era, attempts_used, last_attempt) " +
-            "VALUES (:userId, :era, 1, CURRENT_TIMESTAMP) " +
-            "ON CONFLICT (user_id, era) DO UPDATE SET attempts_used = LEAST(EXCLUDED.attempts_used + 1, 3), last_attempt = CURRENT_TIMESTAMP", nativeQuery = true)
-    void incrementAttempt(@Param("userId") Long userId, @Param("era") String era);
+    @Query(value = "INSERT INTO test_attempts (user_id, era, attempts_used) " +
+            "VALUES (:userId, :era, :attemptsUsed);", nativeQuery = true)
+    void incrementAttempt(@Param("userId") Long userId, @Param("era") String era, @Param("attemptsUsed") int attemptsUsed);
 }
