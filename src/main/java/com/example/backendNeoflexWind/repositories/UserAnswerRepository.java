@@ -8,9 +8,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 
 @Repository
 public interface UserAnswerRepository extends JpaRepository<UserAnswer, Long> {
+    Optional<UserAnswer> findByUserId(Long userId);
+
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO user_answers (user_id, question_id, answer, is_сorrect) " +
