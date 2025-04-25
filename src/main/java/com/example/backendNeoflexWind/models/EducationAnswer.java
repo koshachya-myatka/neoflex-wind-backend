@@ -22,7 +22,7 @@ public class EducationAnswer {
     @ManyToOne
     @JoinColumn(name = "item_id", nullable = false)
     private EducationItem item;
-    @Column(name = "selected_category", nullable = false, length = 20)
+    @Column(name = "selected_category", length = 20)
     private String selectedCategory;
     @Column(name = "is_correct", nullable = false)
     private Boolean isCorrect;

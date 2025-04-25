@@ -17,7 +17,7 @@ public interface EducationAnswerRepository extends JpaRepository<EducationAnswer
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO education_answers (user_id, item_id, selected_category, is_correct) " +
-            "VALUES (:userId, :itemId, :selected_category, :isCorrect);", nativeQuery = true)
+            "VALUES (:userId, :itemId, :selectedCategory, :isCorrect);", nativeQuery = true)
     void saveUserAnswer(@Param("userId") Long userId, @Param("itemId") Long itemId,
-                        @Param("selected_category") String selected_category, @Param("isCorrect") Boolean isCorrect);
+                        @Param("selectedCategory") String selectedCategory, @Param("isCorrect") Boolean isCorrect);
 }

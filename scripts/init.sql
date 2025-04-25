@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS education_answers (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id),
     item_id INTEGER REFERENCES education_items(id),
-    selected_category VARCHAR(20) NOT NULL,
+    selected_category VARCHAR(20),
     is_correct BOOLEAN NOT NULL,
     answered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
