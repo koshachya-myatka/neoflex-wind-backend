@@ -59,7 +59,7 @@ public class ShopController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("//items/popular/{limit}")
+    @GetMapping("/items/popular/{limit}")
     public ResponseEntity<List<Map<String, Object>>> getPopularItems(
             @RequestParam(defaultValue = "5") int limit) {
         List<Object[]> results = shopService.findPopularItems(limit);

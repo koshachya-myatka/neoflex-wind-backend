@@ -2,8 +2,10 @@ package com.example.backendNeoflexWind.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.security.Timestamp;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,8 +22,10 @@ public class Purchase {
     private Long userId;
     @Column(name = "item_id")
     private Long itemId;
-    @Column(name = "purchased_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Timestamp purchasedAt;
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "purchased_at", updatable = false)
+    private Date purchasedAt;
     @Column(length = 20)
     private String status = "pending";
 }

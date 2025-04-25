@@ -22,7 +22,7 @@
   },
   {
     "name": "Аномалия",
-    "description": "Пройти все временные точки в блоке Машина времени",
+    "description": "Пройти все временные точки в блоке Машина времени, использовав все попытки",
     "pointsReward": 30,
     "isSecret": false,
     "iconPath": "assets/achievements/anomaly.png"
