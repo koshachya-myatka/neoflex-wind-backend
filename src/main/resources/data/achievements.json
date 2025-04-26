@@ -1,14 +1,7 @@
 [
   {
-    "name": "Фанат мандаринок",
-    "description": "Попытаться снять кожуру с мандаринки в Торговой точке",
-    "pointsReward": 10,
-    "isSecret": true,
-    "iconPath": "assets/achievements/mandarin_fan.png"
-  },
-  {
     "name": "Хронозавр",
-    "description": "Пройти блок Машина времени на 100%",
+    "description": "Пройти блок Машина времени, использовав все попытки",
     "pointsReward": 50,
     "isSecret": false,
     "iconPath": "assets/achievements/time_master.png"
@@ -21,15 +14,22 @@
     "iconPath": "assets/achievements/neo_pedia.png"
   },
   {
+    "name": "Фанат мандаринок",
+    "description": "Попытаться снять кожуру с мандаринки в Торговой точке",
+    "pointsReward": 10,
+    "isSecret": true,
+    "iconPath": "assets/achievements/mandarin_fan.png"
+  },
+  {
     "name": "Аномалия",
-    "description": "Пройти все временные точки в блоке Машина времени, использовав все попытки",
+    "description": "Пройти все временные точки в блоке Машина времени",
     "pointsReward": 30,
     "isSecret": false,
     "iconPath": "assets/achievements/anomaly.png"
   },
   {
     "name": "Ответственный сортировщик",
-    "description": "Расположить модули по контейнерам в блоке Образовательные миссии",
+    "description": "Расположить все модули по контейнерам в блоке Образовательные миссии",
     "pointsReward": 30,
     "isSecret": false,
     "iconPath": "assets/achievements/sorter.png"
